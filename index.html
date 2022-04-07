@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" async defer></script>
+  <style>
+    body{
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body class="">
+  <header class="w-full bg-gray-300">
+    <div class="container mx-auto px-4 flex justify-between items-baseline">
+      <h1>MRSP</h1>
+      <ul class="flex gap-2">
+        <li><a href="#todolist">Todo List</a></li>
+        <li><a href="#viewlist">View List</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#footer">Footer</a></li>
+    </ul>
+  </header>
+  <img src="https://unsplash.it/640/425?random" class="full-image" />
+  <div class="dropdown relative">
+  <button class="dropdownBtn">Selected <span>▾</span></button>
+    <ul class="dropdownList absolute bg-white w-32">
+      
+    </ul>
+  </div>
+  <div class="container mx-auto">
+    <h1 id="todolist">Todo List</h1>
+    <input class="alertInput form-control mb-4" type="text" placeholder="scrivi qualcosa" />
+    <button class="alertBtn btn btn-primary">Aggiungi</button>
+    <div id="viewlist">
+      <div id="mainContent">
+        <ul class="listContainer">
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="mouseCursor">
+      <h3>Mouse!</h3>
+      <span>X</span>
+    </div> -->
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <p>Ciao a tutti da: </p>
+    <!-- LIGHTBOX-->
+
+    <div class="grid grid-cols-4 gap-4">
+      <a href="https://unsplash.it/640/425?random&q=1" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=1" /></a>
+      <a href="https://unsplash.it/640/425?random&q=2" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=2" /></a>
+      <a href="https://unsplash.it/640/425?random&q=3" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=3" /></a>
+      <a href="https://unsplash.it/640/425?random&q=4" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=4" /></a>
+    </div>
+    <!-- <div class=" jcarousel" data-jcarousel="true">
+      <ul class="jcarousel-list">
+        <li class="jcarousel-item"><a href="https://unsplash.it/640/425?random&q=5" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=5" /></a></li>
+        <li class="jcarousel-item"><a href="https://unsplash.it/640/425?random&q=6" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=6" /></a></li>
+        <li class="jcarousel-item"><a href="https://unsplash.it/640/425?random&q=7" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=7" /></a></li>
+        <li class="jcarousel-item"><a href="https://unsplash.it/640/425?random&q=8" data-lightbox="roadtrip"><img src="https://unsplash.it/640/425?random&q=8" /></a></li>
+      </ul>
+    </div> -->
+    <!-- END LIGHTBOX-->
+    
+    <!--PARALLAX-->
+    <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="https://unsplash.it/640/425?random"></div> -->
+    <!--END PARALLAX-->
+
+    <!-- MANSONRY -->
+    <div class="grid">
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=1" />
+      </div>
+      <div class="grid-item grid-item--width2">
+        <img src="https://unsplash.it/640/425?random&q=2" />
+        
+      </div>
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=3" />
+
+      </div>
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=3" />
+
+      </div>
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=3" />
+
+      </div>
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=3" />
+
+      </div>
+      <div class="grid-item">
+        <img src="https://unsplash.it/640/425?random&q=3" />
+
+      </div>
+
+    </div>
+    <!-- END MANSONRY -->
+
+
+    <a id="about"></a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+  </div>
+  <footer class="w-screen container mx-auto" id="footer">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, cupiditate eaque. Placeat distinctio laudantium ab voluptatum accusamus excepturi nesciunt illum autem id, provident incidunt suscipit est cum in repellat asperiores?</p>
+  </footer>
+  <!-- <div class="hoverMe"></div> -->
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js" integrity="sha512-6gudNVbNM/cVsLUMOb8g2b/RBqtQJ3aDfRFgU+5paeaCTtbYY/Dg00MzZq7r6RvJGI2KKtPBhjkHGTL/iOe21A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.9/jquery.jcarousel.min.js" integrity="sha512-5TU8T3STShZiLsdqDqiKnj0Z72ccPZpIDCuItxc2S7G3lyiwqiuLuDFVNsLQ7Hgu5f33DlZ2KAJspbn6NAXqnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js" integrity="sha512-Blu6KWaTqestULmtJUTB2mwDFTB/FDRuTHV52Uu5dTFVQZ8YWUq2LuxN/brNEjWAqlHr50oAbxrydsuxoK/mqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</body>
+</html>
