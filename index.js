@@ -1,89 +1,56 @@
-var nomi = ["Gaetano", "Matteo","Giacomo","Mario","Francesco"]
-var numeri = [5,7,54,23,78,1,96,34];
-var taskStatus = [
-  {title:"Comprare il pane", completed:true},
-  {title:"Portare il cane a passeggio", completed:false},
-  {title:"Fare benzina", completed:false},
-  {title:"Impare JS", completed:false},
-  {title:"Accompagnare i bambini all'asilo", completed:false},
-]
 
-var nomiSenzaGaetano = nomi.slice(0,1)
-console.log("Nomi",nomi)
-console.log("Nomi senza gaetano ",nomiSenzaGaetano) // ["Matteo","Giacomo","Mario","Francesco"]
-nomi.splice(0,3)
-console.log("Togli 3 nomi",nomi)
-// CERCARE TUTTI I NOMI CHE CONTENGONO LA LETTERA "E"
-// var nomiConLaE =[]
-// for(var i = 0; i<nomi.length; i++){
-//   var nome = nomi[i]
-//   // NOME CORRENTE 
-//   if(nome.includes("e")){
-//     // IL NOME CONTIENE LA LETTERA "E"
-//     // AGGIUNGERE ALL'ARRAY DEI RISULTATI
-//     nomiConLaE.push(nome)
-//   }
-// }
-
-// console.log(nomiConLaE)
-// var oggetto = {
-//   nome:"Mario",
-//   cognome:"Rossi",
-//   eta:"40",
-//   anno:1982,
-//   stato:"celibe",
-//   sesso:"maschio"
-// }
-
-// var attr = oggetto.filter(function(att){
-//   console.log("Attributo",att)
-// })
-
-var nomiConLaE = nomi.filter(function(nome){
-  // return nome.includes("e")
-  return nome.indexOf('e')>-1
-}).map(function(nome){
-  return "Piacere mi chiamo "+nome
-})
-
-var giacomo1 = nomi.find(function(nome){
-  return nome == "Giacomo"
-})
-var giacomo2 = nomi.filter(function(nome){
-  return nome == "Giacomo"
-})
-
-var somma = numeri.reduce(function(prev,curr){
-  return Math.min(prev,curr)
-},0)
-
-var indice = numeri.findIndex(function(numero){
-  return numero == 96
-})
-
-var possoTornareACasa=taskStatus.some(function(task){
-  return task.completed
-})
+let cocktailName = document.querySelector('#cocktailName')
+let cocktailCat = document.querySelector('#cocktailCat')
+let cocktailImg = document.querySelector('#cocktailImg')
+let strInstructionsIT = document.querySelector('#strInstructionsIT')
+let cocktail
 
 
+const responsePromise = fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 
 
+responsePromise.then(response => response.json())
+.then(data => {
+  cocktail= data.drinks[0]
+  
+  console.log("Data acquired",data)
+  cocktailName.innerHTML=cocktail.strDrink
+  cocktailCat.innerHTML=cocktail.strCategory
+  strInstructionsIT.innerHTML=cocktail.strInstructionsIT
+  cocktailImg.src=cocktail.strDrinkThumb
+  return cocktail
+});
+let pokeGrid = document.querySelector('#pokemon')
+let pokedeck = document.querySelector('#pokedeck')
+let catName = document.querySelector('#catName')
+let catCat = document.querySelector('#catCat')
+let catImg = document.querySelector('#catImg')
+let fact = document.querySelector('#fact')
 
-console.log(nomiConLaE)
-console.log(giacomo1)
-console.log(giacomo2)
-console.log(somma)
-console.log(indice)
-console.log("Posso tornare a casa? ", possoTornareACasa?'Si, certo':'No, LAVORA!', possoTornareACasa)
+let catPromise
+let pokebase = "https://pokeapi.co/api/v2/pokemon";
+(async ()=>{
+  pokeGrid.innerHTML = ""
+  catPromise= await (await fetch(`${pokebase}`)).json()
+  console.log( catPromise.results)
+  catPromise.results.forEach(async (pokemon)=>{
+    let pokemonData = await (await fetch(`${pokebase}/${pokemon.name}`)).json()
+    console.log("Pokemon Data", pokemonData)
+    let _deck = pokedeck.cloneNode(true)
+    // let _name = catName.cloneNode(true)
+    // // let _cat = catCat.cloneNode(true)
+    let _img = _deck.querySelector('img')
+    let _name = _deck.querySelector('h2')
+    _name.innerHTML = pokemon.name
+    // let _fact = _deck.querySelector('p')
+    _img.src = pokemonData.sprites.other.dream_world.front_default || pokemonData.sprites.front_default
 
-// console.log(rinomina)
+    // // let _fact = fact.cloneNode(true)
+    
+    // _name.innerHTML=pokemon.name
+    // _cat.innerHTML=pokemon
+    
+    pokeGrid.appendChild(_deck)
+  })
 
-
-function sommatoria(a,b){
-  console.log("Arguments ", arguments)
-  return Array.prototype.reduce.call(arguments, function(prev,curr){
-    return prev+curr
-  },0)
-}
-var sum = sommatoria(5,4,6,7,3,4,5,6,7,2,3,45,6,6,9,3,3,9) // 9
-console.log("Somma ",sum)
+})()

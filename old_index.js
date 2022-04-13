@@ -65,7 +65,7 @@ pippo = "Ciao"
 macchina.owners.first
 macchina.accendi(10)
 
-
+var nome = "Pluto"
 console.log("Ho comprato una nuova macchina", macchina.brand) //Ho comprato una nuova macchina Ferrari
 var macchina = {
   brand: "Ferrari",
@@ -81,7 +81,7 @@ var macchina = {
   km:0,
   accendi:function(serbatoio){
 
-
+    nome
 
     if(temperatura > 40 || vento < 4){
       // IRRIGAZIONE
@@ -133,17 +133,20 @@ var macchina = {
         // STOP
     }
 
-    // if(serbatoio > 10){
-    //   // SI, PARTI
-    //   console.log("VROOOOOOOOM")
-    // } else if(serbatoio < 5){
-    //   console.log("VAI A FARE RIFORNIMENTO")
-    // } else if(serbatoio < 4){
-    //   console.log("VAI A FARE RIFORNIMENTO, CORRI")
-    // }else{
-    //   console.log("STOP")
-    //   return false
-    // }
+    if(serbatoio > 10){
+      // SI, PARTI
+      console.log("VROOOOOOOOM")
+    } else if(serbatoio < 5){ // ! <------
+      var nome = "pippo"
+      
+      console.log("VAI A FARE RIFORNIMENTO")
+      // ! <-----------
+    } else if(serbatoio < 4){
+      console.log("VAI A FARE RIFORNIMENTO, CORRI")
+    }else{
+      console.log("STOP")
+      return false
+    }
 
     if(serbatoio < 0){
       // PARTI
@@ -153,6 +156,9 @@ var macchina = {
       return false
     }
     return serbatoio > 0
+  },
+  onEngineOn:function(){
+    console.log("Hai acceso la macchina")
   },
   spegni:function(){
     console.log("OOOOOOOOOOOFF")
